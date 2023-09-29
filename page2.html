@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- axios CDN 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // axios 라이브러리를 사용하려면 먼저 가져와야 합니다.
+      // 브라우저에서 사용하는 경우, 이미 CDN으로 추가되었다면 필요하지 않습니다.
+
+      // API 엔드포인트 URL
+      const apiUrl =
+        "https://64f732e69d775408495348ae.mockapi.io/api/v1/authmock";
+
+      // GET 요청 보내기
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          // 응답 데이터를 콘솔에 출력
+          console.log("API 응답:");
+          console.log(JSON.stringify(response.data, null, 2));
+        })
+        .catch((error) => {
+          console.error("API 요청 중 오류 발생:", error);
+        });
+    </script>
+  </body>
+</html>
